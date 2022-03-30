@@ -1,0 +1,6 @@
+[user]
+	name = Patrick Ruppert
+	email = patrick.j.ruppert@gmail.com
+[core]
+	editor = vim
+	autocrlf = input
