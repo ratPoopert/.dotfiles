@@ -1,8 +1,12 @@
+- defaults:
+    link:
+      relink: true
+
 - clean: ['~']
 
 - link:
-    ~/.profile: profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
-
-
+    ~/.profile: profile
+    ~/.gitconfig: gitconfig
+    ~/.vimrc: vimrc
