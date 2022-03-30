@@ -10,3 +10,4 @@
     ~/.profile: profile
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.config/lazygit/config.yml: lazygit
