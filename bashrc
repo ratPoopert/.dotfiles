@@ -52,7 +52,7 @@ function color_my_prompt {
   fi
   # }}}
 
-  PS1="\n${R}┌─[$__dir]$__git_branch_color$__git_branch${R}\n├─[$__user]\n└──▶ ${RESET}"
+  PS1="\n${R}┌─[ $__dir$__git_branch_color$__git_branch${R} ]\n├─[ $__user ]\n└─▶ ${RESET}"
 } 
 
 export PROMPT_COMMAND=color_my_prompt
