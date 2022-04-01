@@ -53,19 +53,18 @@ function color_my_prompt {
   # }}}
 
   PS1="\n${R}┌[$__user]─[$__dir]$__git_branch_color$__git_branch${R}\n└──|> ${RESET}"
+} 
 
-  # Enable git bash completion options {{{
-  if [ -f ~/etc/bash_completion.d/git_prompt ]; then
-    GIT_PS1_SHOWDIRTYSTATE=true
-    GIT_PS1_SHOWSTASHSTATE=true
-    GIT_PS1_SHOWUNTRACKEDFILES=true
-    GIT_PS1_SHOWUPSTREAM="auto"
-    GIT_PS1_HIDE_IF_PWD_IGNORED=true
-    GIT_PS1_SHOWCOLORHINTS=true
-    . ~/etc/bash_completion.d/git_prompt
-  fi
-  # }}}
-}
 export PROMPT_COMMAND=color_my_prompt
+
+# Git Prompt options {{{
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWSTASHSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT_PS1_HIDE_IF_PWD_IGNORED=true 
+  GIT_PS1_SHOWCOLORHINTS=true
+# }}}
+
 
 # }}}
