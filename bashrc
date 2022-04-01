@@ -36,7 +36,7 @@ export PATH="~/bin:$PATH"
 
 function color_my_prompt {
   local __user="${WHITE}\u${R}"
-  local __dir="${WHITE}\W${R}"
+  local __dir="${YELLOW}\w${R}"
   local __git_branch_color="${GREEN}"
   local __git_branch=$(__git_ps1);
 
@@ -52,7 +52,7 @@ function color_my_prompt {
   fi
   # }}}
 
-  PS1="\n${R}┌[$__user]─[$__dir]$__git_branch_color$__git_branch${R}\n└──▶ ${RESET}"
+  PS1="\n${R}┌─[$__dir]$__git_branch_color$__git_branch${R}\n├─[$__user]\n└──▶ ${RESET}"
 } 
 
 export PROMPT_COMMAND=color_my_prompt
