@@ -40,7 +40,7 @@ function color_my_prompt {
   local __user="${WHITE}\u${R}"
   local __dir="${YELLOW}\w${R}"
   local __git_branch_color="${GREEN}"
-  local __git_branch=$(__git_ps1);
+  local __git_branch=$(__git_ps1 "%s");
 
   # color branch name depending on state {{{
   if [[ "${__git_branch}" =~ "*" ]]; then
@@ -54,7 +54,7 @@ function color_my_prompt {
   fi
   # }}}
 
-  PS1="\n${R}┌─[ $__dir$__git_branch_color$__git_branch${R} ]\n├─[ $__user ]\n└─▶ ${RESET}"
+  PS1="\n${R}┌─[ $__dir ]─[ $__git_branch_color$__git_branch${R} ]\n├─[ $__user ]\n└─▶ ${RESET}"
 } 
 
 export PROMPT_COMMAND=color_my_prompt
@@ -63,7 +63,7 @@ export PROMPT_COMMAND=color_my_prompt
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWSTASHSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
-  GIT_PS1_SHOWUPSTREAM="auto verbose name"
+  GIT_PS1_SHOWUPSTREAM="auto verbose"
   GIT_PS1_HIDE_IF_PWD_IGNORED=true 
   GIT_PS1_SHOWCOLORHINTS=true
 # }}}
