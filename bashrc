@@ -54,7 +54,7 @@ function color_my_prompt {
   fi
   # }}}
 
-  PS1="\n${R}┌─[$__dir]─[$__git_branch_color$__git_branch${R}]\n├─[$__user]\n└─▶ ${RESET}"
+  PS1="\n${R}┌─[$__user]─[$__dir]─[$__git_branch_color$__git_branch${R}]\n└─▶ ${RESET}"
 } 
 
 export PROMPT_COMMAND=color_my_prompt
@@ -66,6 +66,7 @@ export PROMPT_COMMAND=color_my_prompt
   GIT_PS1_SHOWUPSTREAM=true
   GIT_PS1_HIDE_IF_PWD_IGNORED=true 
   GIT_PS1_SHOWCOLORHINTS=true
+  GIT_PS1_STATESEPARATOR=" "
 # }}}
 
 
