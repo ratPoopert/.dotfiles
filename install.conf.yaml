@@ -11,3 +11,4 @@
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.config/lazygit/config.yml: lazygit
+    ~/.git-sh-prompt: git-sh-prompt

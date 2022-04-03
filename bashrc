@@ -20,6 +20,8 @@ export PATH="~/bin:$PATH"
 # }}}
 
 # PROMPT {{{
+  
+  source ~/.git-sh-prompt
 
   # COLORS {{{
     BLACK='\[$(tput setaf 0)\]'
