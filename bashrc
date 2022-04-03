@@ -40,21 +40,23 @@ function color_my_prompt {
   local __user="${WHITE}\u${R}"
   local __dir="${YELLOW}\w${R}"
   local __git_branch_color="${GREEN}"
-  local __git_branch=$(__git_ps1 "%s");
-
+  local __git_status=$(__git_ps1)
+  
   # color branch name depending on state {{{
-  if [[ "${__git_branch}" =~ "*" ]]; then
+  if [[ "${__git_status}" =~ "*" ]]; then
     __git_branch_color="${RED}"
-  elif [[ "${__git_branch}" =~ "$" ]]; then
+  elif [[ "${__git_status}" =~ "$" ]]; then
     __git_branch_color="${YELLOW}"
-  elif [[ "${__git_branch}" =~ "%" ]]; then
+  elif [[ "${__git_status}" =~ "%" ]]; then
     __git_branch_color="${MAGENTA}"
-  elif [[ "${__git_branch}" =~ "+" ]]; then
+  elif [[ "${__git_status}" =~ "+" ]]; then
     __git_branch_color="${BLUE}"
   fi
   # }}}
 
-  PS1="\n${R}┌─[$__user]─[$__dir]─[$__git_branch_color$__git_branch${R}]\n└─▶ ${RESET}"
+  local __git_branch=$(__git_ps1 "${R}─[$__git_branch_color"%s"${R}]");
+
+  PS1="\n${R}┌─[$__user]─[$__dir]$__git_branch${R}\n└─▶ ${RESET}"
 } 
 
 export PROMPT_COMMAND=color_my_prompt
