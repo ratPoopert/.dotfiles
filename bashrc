@@ -37,8 +37,8 @@ export PATH="~/bin:$PATH"
   # }}}
 
 function color_my_prompt {
-  local __user="${WHITE}\u${R}"
-  local __dir="${YELLOW}\w${R}"
+  local __user="${YELLOW}\u${R}"
+  local __dir="${WHITE}\w${R}"
   local __git_branch_color="${GREEN}"
   local __git_status=$(__git_ps1)
   
